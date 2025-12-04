@@ -1,6 +1,7 @@
 # Multilingual Discrepencies in LLM Guardrail Evaluation
 
-This repository lets you **generate LLM responses** and **evaluate them with different guardrails** in batch.
+This repository lets you **generate LLM responses** and **evaluate them with different guardrails (supported with [mozilla.ai's any_guardrail](https://github.com/mozilla-ai/any-guardrail))
+** in batch.
 
 It is designed so that someone can:
 
