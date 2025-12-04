@@ -1,19 +1,6 @@
-# Core guardrail library with HF + FlowJudge support
-any-guardrail[huggingface,flowjudge]>=0.2.2
-
-# OpenAI SDK (used for OpenAI, Gemini, Mistral via OpenAI-compatible endpoints)
-openai>=1.55.0
-
-# Environment variable loading
-python-dotenv>=1.0.1
-
-# Numerical + scientific stack (needed by HF / FlowJudge)
-numpy>=1.26,<3.0
-scipy>=1.12,<2.0
-
-# HuggingFace ecosystem (used by Glider + FlowJudge)
-transformers>=4.44,<5.0
-huggingface_hub>=0.26,<1.0
-
-# Deep learning backend for HF models
-torch>=2.2,<3.0
+any-guardrail[flowjudge]        # FlowJudge extra
+any-guardrail                   # base package
+transformers>=4.44.0
+huggingface_hub>=0.26.0
+openai>=1.0.0
+python-dotenv
