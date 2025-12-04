@@ -123,7 +123,7 @@ multilingual_guardrail/
 │   └─ flowjudge_criteria.txt     # FlowJudge evaluation criteria
 │
 ├─ data/
-│   ├─ sample_scenarios.csv       #has all 60 scenarios (30 in En and 30 farsi translated)
+│   ├─ scenarios.csv       #has all 60 scenarios (30 in En and 30 farsi translated)
 │   └─ scenarios_sample_short.csv #only has 4 scenarios (for tetsing)
 │
 ├─ outputs/                       # Results are written here
@@ -153,7 +153,7 @@ You choose behavior using command-line flags.
 General pattern:
 
 ```bash
-python run_batch_guardrails_all.py   --input data/sample_scenarios.csv   --output-prefix outputs/<run_name>   --guardrail <flowjudge|glider|anyllm>   --provider <openai|gemini|mistral>   --model <model_name>   --assistant-system-prompt-file config/assistant_system_prompt.txt   --policy-files <one or more policy files>   --rubric-file config/rubric.txt   [extra flags depending on guardrail]
+python run_batch_guardrails_all.py   --input data/scenarios.csv   --output-prefix outputs/<run_name>   --guardrail <flowjudge|glider|anyllm>   --provider <openai|gemini|mistral>   --model <model_name>   --assistant-system-prompt-file config/assistant_system_prompt.txt   --policy-files <one or more policy files>   --rubric-file config/rubric.txt   [extra flags depending on guardrail]
 ```
 
 ### 8.1 OpenAI + FlowJudge 
@@ -161,7 +161,7 @@ python run_batch_guardrails_all.py   --input data/sample_scenarios.csv   --outpu
 This runs the assistant model from OpenAI and evaluates each response with FlowJudge.
 
 ```bash
-python run_batch_guardrails_all.py   --input data/sample_scenarios.csv   --output-prefix outputs/run_flowjudge_openai   --guardrail flowjudge   --provider openai   --model gpt-4o-mini   --assistant-system-prompt-file config/assistant_system_prompt.txt   --policy-files config/policy.txt config/policy_fa.txt   --rubric-file config/rubric.txt   --flowjudge-metric-name policy_compliance_asylum   --flowjudge-criteria-file config/flowjudge_criteria.txt
+python run_batch_guardrails_all.py   --input data/scenarios.csv   --output-prefix outputs/run_flowjudge_openai   --guardrail flowjudge   --provider openai   --model gpt-4o-mini   --assistant-system-prompt-file config/assistant_system_prompt.txt   --policy-files config/policy.txt config/policy_fa.txt   --rubric-file config/rubric.txt   --flowjudge-metric-name policy_compliance_asylum   --flowjudge-criteria-file config/flowjudge_criteria.txt
 ```
 
 Key points:
@@ -178,7 +178,7 @@ Key points:
 ### 8.2 OpenAI + Glider
 
 ```bash
-python run_batch_guardrails_all.py   --input data/sample_scenarios.csv   --output-prefix outputs/run_glider_openai   --guardrail glider   --provider openai   --model gpt-4o-mini   --assistant-system-prompt-file config/assistant_system_prompt.txt   --policy-files config/policy.txt config/policy_fa.txt   --rubric-file config/rubric.txt   --glider-pass-criteria-file config/glider_pass_criteria.txt   --glider-rubric-file config/glider_rubric.txt
+python run_batch_guardrails_all.py   --input data/scenarios.csv   --output-prefix outputs/run_glider_openai   --guardrail glider   --provider openai   --model gpt-4o-mini   --assistant-system-prompt-file config/assistant_system_prompt.txt   --policy-files config/policy.txt config/policy_fa.txt   --rubric-file config/rubric.txt   --glider-pass-criteria-file config/glider_pass_criteria.txt   --glider-rubric-file config/glider_rubric.txt
 ```
 
 Glider will:
@@ -192,7 +192,7 @@ Glider will:
 ### 8.3 OpenAI + AnyLLM
 
 ```bash
-python run_batch_guardrails_all.py   --input data/sample_scenarios.csv   --output-prefix outputs/run_anyllm_openai   --guardrail anyllm   --provider openai   --model gpt-4o-mini   --assistant-system-prompt-file config/assistant_system_prompt.txt   --policy-files config/policy.txt config/policy_fa.txt   --rubric-file config/rubric.txt
+python run_batch_guardrails_all.py   --input data/scenarios.csv   --output-prefix outputs/run_anyllm_openai   --guardrail anyllm   --provider openai   --model gpt-4o-mini   --assistant-system-prompt-file config/assistant_system_prompt.txt   --policy-files config/policy.txt config/policy_fa.txt   --rubric-file config/rubric.txt
 ```
 
 AnyLLM:
@@ -209,12 +209,12 @@ Gemini is accessed through the **OpenAI-compatible** API using your Gemini key.
 Gemini + FlowJudge:
 
 ```bash
-python run_batch_guardrails_all.py   --input data/sample_scenarios.csv   --output-prefix outputs/run_flowjudge_gemini   --guardrail flowjudge   --provider gemini   --model gemini-2.5-flash   --assistant-system-prompt-file config/assistant_system_prompt.txt   --policy-files config/policy.txt config/policy_fa.txt   --rubric-file config/rubric.txt   --flowjudge-metric-name policy_compliance_asylum   --flowjudge-criteria-file config/flowjudge_criteria.txt
+python run_batch_guardrails_all.py   --input data/scenarios.csv   --output-prefix outputs/run_flowjudge_gemini   --guardrail flowjudge   --provider gemini   --model gemini-2.5-flash   --assistant-system-prompt-file config/assistant_system_prompt.txt   --policy-files config/policy.txt config/policy_fa.txt   --rubric-file config/rubric.txt   --flowjudge-metric-name policy_compliance_asylum   --flowjudge-criteria-file config/flowjudge_criteria.txt
 ```
 Gemini + Glider:
 
 ```bash
-python run_batch_guardrails_all.py   --input data/sample_scenarios.csv   --output-prefix outputs/run_glider_gemini   --guardrail glider   --provider gemini   --model gemini-2.5-flash   --assistant-system-prompt-file config/assistant_system_prompt.txt   --policy-files config/policy.txt config/policy_fa.txt   --rubric-file config/rubric.txt   --glider-pass-criteria-file config/glider_pass_criteria.txt   --glider-rubric-file config/glider_rubric.txt
+python run_batch_guardrails_all.py   --input data/scenarios.csv   --output-prefix outputs/run_glider_gemini   --guardrail glider   --provider gemini   --model gemini-2.5-flash   --assistant-system-prompt-file config/assistant_system_prompt.txt   --policy-files config/policy.txt config/policy_fa.txt   --rubric-file config/rubric.txt   --glider-pass-criteria-file config/glider_pass_criteria.txt   --glider-rubric-file config/glider_rubric.txt
 ```
 
 ---
@@ -222,7 +222,7 @@ python run_batch_guardrails_all.py   --input data/sample_scenarios.csv   --outpu
 ### 8.5 Mistral + FlowJudge
 
 ```bash
-python run_batch_guardrails_all.py   --input data/sample_scenarios.csv   --output-prefix outputs/run_flowjudge_mistral   --guardrail flowjudge   --provider mistral   --model mistral-small-latest   --assistant-system-prompt-file config/assistant_system_prompt.txt   --policy-files config/policy.txt config/policy_fa.txt   --rubric-file config/rubric.txt   --flowjudge-metric-name policy_compliance_asylum   --flowjudge-criteria-file config/flowjudge_criteria.txt
+python run_batch_guardrails_all.py   --input data/scenarios.csv   --output-prefix outputs/run_flowjudge_mistral   --guardrail flowjudge   --provider mistral   --model mistral-small-latest   --assistant-system-prompt-file config/assistant_system_prompt.txt   --policy-files config/policy.txt config/policy_fa.txt   --rubric-file config/rubric.txt   --flowjudge-metric-name policy_compliance_asylum   --flowjudge-criteria-file config/flowjudge_criteria.txt
 ```
 
 ---
