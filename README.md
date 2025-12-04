@@ -283,9 +283,5 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 10.2 SciPy / NumPy / Torch errors
- 
-Make sure you installed from `requirements.txt` in an **empty** venv.
-
 ---
 
