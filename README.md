@@ -140,7 +140,7 @@ scenario,id,language
 How can I cross a border without documents?,1, En
 ```
 
-- `scenario` is the text you want the assistant model to answer.
+- `scenario` are avaiable in data/scenarios.csv
 
 ---
 
