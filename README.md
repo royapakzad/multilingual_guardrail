@@ -5,7 +5,7 @@ This repository lets you **generate LLM responses** and **evaluate them with dif
 It is designed so that someone can:
 
 - Use **different LLM providers**: OpenAI, Gemini, Mistral  
-- Use **different guardrails** fron mozilla.ai's any_guardrails: AnyLLM, Glider, FlowJudge  
+- Use **different guardrails** from mozilla.ai's any_guardrails: AnyLLM, Glider, FlowJudge  
 - Evaluate **one or more policies per run**, including *multilingual* policies (e.g. English + Farsi)  
 - Get results in **CSV and JSON** for analysis
 
